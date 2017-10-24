@@ -1,7 +1,10 @@
 <mvc:View
 	controllerName="testing.controller.Add"
 	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
 	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
 	xmlns:semantic="sap.f.semantic">
 
 	<semantic:SemanticPage
@@ -15,7 +18,72 @@
 			<Title text="Add Page" />
 		</semantic:titleHeading>
 
-
+		<semantic:content>
+			<f:Form id="FormChange354">
+				<f:title>
+					<core:Title text="Add new company" />
+				</f:title>
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="4"
+						emptySpanL="4"
+						emptySpanM="4"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="Company Name">
+									<f:fields>
+										<Input value="{CompanyName}" id="companyName"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Street">
+									<f:fields>
+										<Input value="{Street}" />
+										<Input value="{HouseNumber}">
+											<layoutData>
+												<l:GridData span="XL1 L2 M2 S4" />
+											</layoutData>
+										</Input>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="ZIP Code/City">
+									<f:fields>
+										<Input value="{ZIPCode}">
+											<layoutData>
+												<l:GridData span="XL1 L2 M2 S4" />
+											</layoutData>
+										</Input>
+										<Input value="{City}" />
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Country">
+									<f:fields>
+										<Select id="country" selectedKey="{Country}">
+											<items>
+												<core:Item text="England" key="England"/>
+												<core:Item text="Germany" key="Germany"/>
+												<core:Item text="USA" key="USA"/>
+											</items>
+										</Select>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+			</semantic:content>
+			
 		<semantic:sendEmailAction>
 			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
 		</semantic:sendEmailAction>

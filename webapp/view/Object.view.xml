@@ -2,30 +2,43 @@
 	controllerName="testing.controller.Object"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:semantic="sap.f.semantic">
-
-	<semantic:SemanticPage
-		id="page"
-		headerPinnable="false"
-		toggleHeaderOnTitleClick="false"
-		busy="{objectView>/busy}"
-		busyIndicatorDelay="{objectView>/delay}">
-
-		<semantic:titleHeading>
-			<Title text="{CompanyName}" />
-		</semantic:titleHeading>
-
-		<semantic:headerContent>
-			<ObjectNumber
-				numberUnit="{Address/AddressType}"
-			/>
-		</semantic:headerContent>
-
-		<semantic:sendEmailAction>
-			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
-		</semantic:sendEmailAction>
-
-
-	</semantic:SemanticPage>
-
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<Page>
+		<content>
+			<ObjectHeader
+				title="{CompanyName}"
+				backgroundDesign="Solid"
+				number="{PhoneNumber}">
+				<attributes>
+					<ObjectAttribute title="Web Address" text="{WebAddress}" />
+					<ObjectAttribute title="Email Address" text="{EmailAddress}" />
+				</attributes>
+			</ObjectHeader>
+			<IconTabBar
+				expanded="{device>/isNoPhone}"
+				class="sapUiSmallMarginBottom sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter
+						text="Info">
+						<f:SimpleForm
+							minWidth="1024"
+							maxContainerCols="2"
+							layout="ResponsiveGridLayout" >
+							<f:title>
+								<core:Title text="{CompanyName}" />
+							</f:title>
+							<Label text="BusinessPartnerID: "/>
+							<Text text="{BusinessPartnerID}"/>
+							<Label text="LegalForm: "/>
+							<Text text="{LegalForm}"/>
+						</f:SimpleForm>
+					</IconTabFilter>
+					<IconTabFilter
+						text="Attachments">
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
 </mvc:View>
