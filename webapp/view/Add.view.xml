@@ -5,18 +5,15 @@
 	xmlns:l="sap.ui.layout"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:f="sap.ui.layout.form"
-	xmlns:semantic="sap.f.semantic">
+	xmlns:semantic="sap.m.semantic">
 
-	<semantic:SemanticPage
+	<semantic:FullscreenPage
 		id="page"
-		headerPinnable="false"
-		toggleHeaderOnTitleClick="false"
 		busy="{objectView>/busy}"
-		busyIndicatorDelay="{objectView>/delay}">
-
-		<semantic:titleHeading>
-			<Title text="Add Page" />
-		</semantic:titleHeading>
+		busyIndicatorDelay="{objectView>/delay}"
+		title="Add Page"
+		showNavButton="true"
+		navButtonPress="onNavBack">
 
 		<semantic:content>
 			<f:Form id="FormChange354">
@@ -62,14 +59,14 @@
 										<Input value="{PhoneNumber}"/>
 									</f:fields>
 								</f:FormElement>
-								<f:FormElement label="BusinessPartnerID">
+								<f:FormElement label="Address Type">
 									<f:fields>
-										<Input value="{BusinessPartnerID}"/>
+										<Input value="{Address/AddressType}"/>
 									</f:fields>
 								</f:FormElement>
-								<f:FormElement label="LegalForm">
+								<f:FormElement label="Address Country">
 									<f:fields>
-										<Input value="{LegalForm}"/>
+										<Input value="{Address/Country}"/>
 									</f:fields>
 								</f:FormElement>
 							</f:formElements>
@@ -77,14 +74,19 @@
 					</f:formContainers>
 				</f:Form>
 			</semantic:content>
-			<semantic:AddAction>
-				
-			</semantic:AddAction>
+			
+			<semantic:saveAction>
+				<semantic:SaveAction id="save" press="onSave"/>
+			</semantic:saveAction>
+			<semantic:cancelAction>
+				<semantic:CancelAction id="cancel" press="onCancel"/>
+			</semantic:cancelAction>
+			
 		<semantic:sendEmailAction>
 			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
 		</semantic:sendEmailAction>
 
 
-	</semantic:SemanticPage>
+	</semantic:FullscreenPage>
 
 </mvc:View>

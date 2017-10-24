@@ -28,10 +28,32 @@
 							<f:title>
 								<core:Title text="{CompanyName}" />
 							</f:title>
+							<Label text="Address: "/>
+							<Text text="{Address/AddressType}"/>
+							<Label text="Country: "/>
+							<Text text="{Address/Country}"/>
+							
 							<Label text="BusinessPartnerID: "/>
 							<Text text="{BusinessPartnerID}"/>
+							
 							<Label text="LegalForm: "/>
 							<Text text="{LegalForm}"/>
+							
+							<Label text="FaxNumber: "/>
+							<Text text="{FaxNumber}"/>
+							
+							<Label text="CurrencyCode: "/>
+							<Text text="{CurrencyCode}"/>
+							
+							<Label text="BusinessPartnerRole: "/>
+							<Text text="{BusinessPartnerRole}"/>
+							
+							<Label text="CreatedAt: "/>
+							<Text text="{CreatedAt}"/>
+							
+							<Label text="ChangedAt: "/>
+							<Text text="{ChangedAt}"/>
+
 						</f:SimpleForm>
 					</IconTabFilter>
 					<IconTabFilter
