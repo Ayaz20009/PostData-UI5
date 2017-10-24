@@ -2,7 +2,8 @@
 	controllerName="testing.controller.Worklist"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:semantic="sap.f.semantic">
+	xmlns:semantic="sap.f.semantic"
+	xmlns:l= "sap.ui.layout">
 
 	<semantic:SemanticPage
 		id="page"
@@ -59,7 +60,9 @@
 						press="onPress">
 						<cells>
 							<ObjectIdentifier
-								title="{CompanyName}"/>
+								title="{CompanyName}"
+								titleActive="true"
+								titlePress="onShowDetailPopOver"/>
 							<ObjectNumber
 								unit="{Address/AddressType}"/>
 						</cells>
@@ -72,7 +75,21 @@
 			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
 		</semantic:sendEmailAction>
 
-
+	<semantic:dependents>
+		<ResponsivePopover
+			id="contactPopOver"
+			title="Company contact info"
+			class="sapUiPopupWithPadding">
+			<content>
+				<l:Grid>
+					<l:content>
+						<Text text="Address: {path: 'Address'}"/>
+						<Text text="Phone Number: {path: 'PhoneNumber'}"/>
+					</l:content>
+				</l:Grid>
+			</content>
+		</ResponsivePopover>
+	</semantic:dependents>
 	</semantic:SemanticPage>
 
 </mvc:View>

@@ -132,6 +132,13 @@ sap.ui.define([
 			onAddButton: function(){
 				MessageToast.show('Pressed');
 			},
+			onShowDetailPopOver: function(e){
+				var oPopOver = this.byId("contactPopOver");
+				oPopOver.bindElement(e.getSource().getBindingContext().getPath());
+				
+				var oOpener = e.getParameter("domRef");
+				oPopOver.openBy(oOpener);
+			},
 
 			/* =========================================================== */
 			/* internal methods                                            */
