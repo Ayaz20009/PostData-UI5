@@ -20,7 +20,6 @@ sap.ui.define([
 			// create default properties
 			
 			var oProperties = {
-			// BusinessPartnerID: "" + parseInt(Math.random() * 0100000000, 10),
 			BusinessPartnerRole: "01",
 			CurrencyCode: "EUR"
 			};
