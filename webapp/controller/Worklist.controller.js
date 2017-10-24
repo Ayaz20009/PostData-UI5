@@ -3,8 +3,9 @@ sap.ui.define([
 		"sap/ui/model/json/JSONModel",
 		"testing/model/formatter",
 		"sap/ui/model/Filter",
-		"sap/ui/model/FilterOperator"
-	], function (BaseController, JSONModel, formatter, Filter, FilterOperator) {
+		"sap/ui/model/FilterOperator",
+		"sap/m/MessageToast"
+	], function (BaseController, JSONModel, formatter, Filter, FilterOperator,MessageToast) {
 		"use strict";
 
 		return BaseController.extend("testing.controller.Worklist", {
@@ -127,6 +128,9 @@ sap.ui.define([
 			onRefresh : function () {
 				var oTable = this.byId("table");
 				oTable.getBinding("items").refresh();
+			},
+			onAddButton: function(){
+				MessageToast.show('Pressed');
 			},
 
 			/* =========================================================== */
