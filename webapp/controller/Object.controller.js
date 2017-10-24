@@ -79,7 +79,7 @@ sap.ui.define([
 			 */
 			_onObjectMatched : function (oEvent) {
 				var sObjectId =  oEvent.getParameter("arguments").objectId;
-				this.getModel().metadataLoaded().then( function() {
+				this.getModel().metadataLoaded().then(function() {
 					var sObjectPath = this.getModel().createKey("BusinessPartnerSet", {
 						BusinessPartnerID :  sObjectId
 					});
@@ -96,7 +96,6 @@ sap.ui.define([
 			_bindView : function (sObjectPath) {
 				var oViewModel = this.getModel("objectView"),
 					oDataModel = this.getModel();
-
 				this.getView().bindElement({
 					path: sObjectPath,
 					events: {

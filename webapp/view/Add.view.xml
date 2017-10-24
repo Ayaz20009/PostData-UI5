@@ -69,6 +69,30 @@
 										<Input value="{Address/Country}"/>
 									</f:fields>
 								</f:FormElement>
+								<f:FormElement label="Address Street">
+									<f:fields>
+										<Input value="{Address/Street}"/>
+									</f:fields>
+								</f:FormElement>
+								
+								<f:FormElement label="Address Building">
+									<f:fields>
+										<Input value="{Address/Building}"/>
+									</f:fields>
+								</f:FormElement>
+								
+								<f:FormElement label="Address City">
+									<f:fields>
+										<Input value="{Address/City}"/>
+									</f:fields>
+								</f:FormElement>
+								
+								<f:FormElement label="Address PostalCode">
+									<f:fields>
+										<Input value="{Address/PostalCode}"/>
+									</f:fields>
+								</f:FormElement>
+								
 							</f:formElements>
 						</f:FormContainer>
 					</f:formContainers>

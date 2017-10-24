@@ -4,7 +4,9 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:f="sap.ui.layout.form"
 	xmlns:core="sap.ui.core">
-	<Page>
+	<Page 
+		showNavButton="true"
+		navButtonPress="onNavBack">
 		<content>
 			<ObjectHeader
 				title="{CompanyName}"
@@ -28,8 +30,21 @@
 							<f:title>
 								<core:Title text="{CompanyName}" />
 							</f:title>
-							<Label text="Address: "/>
+							<Label text="Address Type: "/>
 							<Text text="{Address/AddressType}"/>
+							
+							<Label text="Address Building: "/>
+							<Text text="{Address/Building}"/>
+							
+							<Label text="City: "/>
+							<Text text="{Address/City}"/>
+							
+							<Label text="PostalCode: "/>
+							<Text text="{Address/PostalCode}"/>
+							
+							<Label text="Street: "/>
+							<Text text="{Address/Street}"/>
+							
 							<Label text="Country: "/>
 							<Text text="{Address/Country}"/>
 							
