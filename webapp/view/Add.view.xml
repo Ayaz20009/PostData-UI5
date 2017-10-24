@@ -47,35 +47,29 @@
 										<Input value="{CompanyName}" id="companyName"/>
 									</f:fields>
 								</f:FormElement>
-								<f:FormElement label="Street">
+								<f:FormElement label="Web Address">
 									<f:fields>
-										<Input value="{Street}" />
-										<Input value="{HouseNumber}">
-											<layoutData>
-												<l:GridData span="XL1 L2 M2 S4" />
-											</layoutData>
-										</Input>
+										<Input value="{WebAddress}" />
 									</f:fields>
 								</f:FormElement>
-								<f:FormElement label="ZIP Code/City">
+								<f:FormElement label="Email Address">
 									<f:fields>
-										<Input value="{ZIPCode}">
-											<layoutData>
-												<l:GridData span="XL1 L2 M2 S4" />
-											</layoutData>
-										</Input>
-										<Input value="{City}" />
+										<Input value="{EmailAddress}" />
 									</f:fields>
 								</f:FormElement>
-								<f:FormElement label="Country">
+								<f:FormElement label="Phone Number">
 									<f:fields>
-										<Select id="country" selectedKey="{Country}">
-											<items>
-												<core:Item text="England" key="England"/>
-												<core:Item text="Germany" key="Germany"/>
-												<core:Item text="USA" key="USA"/>
-											</items>
-										</Select>
+										<Input value="{PhoneNumber}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="BusinessPartnerID">
+									<f:fields>
+										<Input value="{BusinessPartnerID}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="LegalForm">
+									<f:fields>
+										<Input value="{LegalForm}"/>
 									</f:fields>
 								</f:FormElement>
 							</f:formElements>
@@ -83,7 +77,9 @@
 					</f:formContainers>
 				</f:Form>
 			</semantic:content>
-			
+			<semantic:AddAction>
+				
+			</semantic:AddAction>
 		<semantic:sendEmailAction>
 			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
 		</semantic:sendEmailAction>
