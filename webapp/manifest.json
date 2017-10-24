@@ -108,6 +108,13 @@
 					"target": [
 						"object"
 					]
+				},
+				{
+					"pattern": "addPage",
+					"name": "addPage",
+					"target": [
+						"add"
+					]
 				}
 			],
 			"targets": {
@@ -122,6 +129,12 @@
 					"viewId": "object",
 					"viewLevel": 2,
 					"title": "{i18n>objectViewTitle}"
+				},
+				"add": {
+					"viewName": "Add",
+					"viewId": "add",
+					"viewLevel": 2,
+					"title": "Add Page"
 				},
 				"objectNotFound": {
 					"viewName": "ObjectNotFound",

@@ -130,15 +130,9 @@ sap.ui.define([
 				oTable.getBinding("items").refresh();
 			},
 			onAddButton: function(){
-				MessageToast.show('Pressed');
+				this.getRouter().navTo("addPage");
 			},
-			onShowDetailPopOver: function(e){
-				var oPopOver = this.byId("contactPopOver");
-				oPopOver.bindElement(e.getSource().getBindingContext().getPath());
-				
-				var oOpener = e.getParameter("domRef");
-				oPopOver.openBy(oOpener);
-			},
+		
 
 			/* =========================================================== */
 			/* internal methods                                            */

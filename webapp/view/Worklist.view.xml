@@ -60,9 +60,7 @@
 						press="onPress">
 						<cells>
 							<ObjectIdentifier
-								title="{CompanyName}"
-								titleActive="true"
-								titlePress="onShowDetailPopOver"/>
+								title="{CompanyName}"/>
 							<ObjectNumber
 								unit="{Address/AddressType}"/>
 						</cells>
@@ -74,22 +72,6 @@
 		<semantic:sendEmailAction>
 			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
 		</semantic:sendEmailAction>
-
-	<semantic:dependents>
-		<ResponsivePopover
-			id="contactPopOver"
-			title="Company contact info"
-			class="sapUiPopupWithPadding">
-			<content>
-				<l:Grid>
-					<l:content>
-						<Text text="Address: {path: 'Address'}"/>
-						<Text text="Phone Number: {path: 'PhoneNumber'}"/>
-					</l:content>
-				</l:Grid>
-			</content>
-		</ResponsivePopover>
-	</semantic:dependents>
 	</semantic:SemanticPage>
 
 </mvc:View>
